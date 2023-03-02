@@ -3,17 +3,14 @@ import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/emailx32.png';
 
 const BotonEmail = (props) => {
-
     const {onPress, text}= props
-
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}
             onPress = {onPress}
         >           
             <Image
-                source={icon}
-                
+                source={icon}               
             />
             <Text
                 style={styles.buttonText}
@@ -27,7 +24,6 @@ export default BotonEmail
 
 const styles = StyleSheet.create({
     buttonContainer:{
-        //backgroundColor: '#4b0082',
         backgroundColor: '#483d8b',
         marginBottom:10,
         paddingHorizontal:8,

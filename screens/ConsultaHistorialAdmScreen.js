@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
     paddingRight: 15 
   },
   title:{
-    //marginTop:Platform.OS === 'ios' ? 100 : 15,
     marginTop: 2,
     fontWeight:'bold', 
     fontSize: 20, 
@@ -122,7 +121,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: 20,
     textAlign: "left",
-    color: "indigo",
     fontSize: 14,
     fontWeight: 'bold',
     fontStyle: 'italic',

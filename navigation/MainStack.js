@@ -25,6 +25,7 @@ import ReglamentoInternoScreen from '../screens/ReglamentoInterno';
 import ActasResolucionesScreen from '../screens/ActasResolucionesScreen';
 import ActasResolDescripScreen from '../screens/ActasResolDescripScreen';
 import ConsultaPagosCasaAdminScreen from '../screens/ConsultaPagosCasaAdminScreen';
+import ConsultaPagosCompAdminScreen from '../screens/ConsultaPagosCompAdminScreen';
 import BuscaComprobantesAdmScreen from '../screens/BuscaComprobantesAdmScreen';
 import BuscaCompAdminDetalleScreen from '../screens/BuscaCompAdminDetalleScreen';
 
@@ -130,6 +131,10 @@ const MainStack = () => {
                 <Stack.Screen
                     name='ConsultaPagosCasaAdmin'
                     component={ConsultaPagosCasaAdminScreen}
+                />
+                <Stack.Screen
+                    name='ConsultaPagosCompAdmin'
+                    component={ConsultaPagosCompAdminScreen}
                 /> 
                 <Stack.Screen
                     name='BuscaComprobantesAdm'

@@ -1,12 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
 import React, {useContext} from "react";
 import themeContext from '../config/themeContext'
-import { WebView } from 'react-native-webview';
 
 const ListItem = ({ item }) => {
-
   const theme = useContext(themeContext);
-
   const {
     NOMBRES,
     CASA,
@@ -18,6 +15,7 @@ const ListItem = ({ item }) => {
     HABITADO_POR,
     OBSERVACIONES,
   } = item;
+
   return (
     <View style={[styles.container, {backgroundColor:theme.background}]}>
       <Text style={styles.text}>{NOMBRES}</Text>      
@@ -60,7 +58,6 @@ const ListItem = ({ item }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: "white",
     borderRadius: 10,
     marginBottom: 10,
     padding: 10,
@@ -96,11 +93,6 @@ const styles = StyleSheet.create({
   text2: {
     fontSize: 12,
   },
-  webView:{
-    //flex: 1,
-    height: 50,
-    backgroundColor: 'powderblue',
-  } 
 });
 
 export default ListItem;

@@ -11,7 +11,7 @@ const ListPagosCasaAdmin = ({ item }) => {
     <>
     <View style={styles.container1}>
       <View style={{ flexDirection:'column' }}>
-        <Text style={{fontSize: 12,fontWeight: "bold", color: theme.color, }}>Comp</Text>
+        <Text style={{fontSize: 12,fontWeight: "bold", color: theme.color }}>Comp</Text>
         <Text style={{fontSize: 12, paddingLeft: 5, paddingBottom: 5, color:'gray'}}>{COMPROBANTE}</Text>
       </View>
       <View style={{ flexDirection:'column' }}>
@@ -45,18 +45,10 @@ const ListPagosCasaAdmin = ({ item }) => {
 
 const styles = StyleSheet.create({
   container1: {
-    //backgroundColor: "white",
-    //borderTopEndRadius:10,
-    //borderTopStartRadius:10,
-    flexDirection: "row",
-    //padding: 5,  
+    flexDirection: "row",  
   },
   container2: {
-    //backgroundColor: "white",
-    //borderBottomLeftRadius:10,
-    //borderBottomRightRadius:10,
     flexDirection: "column",
-    //padding: 5,
     marginBottom:5, 
   },
   separator: {

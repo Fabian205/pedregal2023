@@ -1,12 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/whatsappx32.png';
-//import icon from '../assets/flecha.png';
 
 const BotonWsp = (props) => {
-
     const {onPress, text}= props
-
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}

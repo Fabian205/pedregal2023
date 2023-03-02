@@ -3,19 +3,12 @@ import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/calendar.png';
 
 const BotonImg = (props) => {
-
     const {onPress, text}= props
-
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}
             onPress = {onPress}
         >
-            {/* <Text
-                style={styles.buttonText}
-            >
-                {text}
-            </Text> */}
             <Image
                 source={icon}
             />
@@ -28,7 +21,6 @@ export default BotonImg
 const styles = StyleSheet.create({
 
     buttonContainer:{
-        //backgroundColor: '#4b0082',
         marginBottom:10,
         paddingHorizontal:8,
         paddingVertical:8,
@@ -40,7 +32,6 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
-        //fontWeight:'bold',
         textAlign: 'center',
     },
 })

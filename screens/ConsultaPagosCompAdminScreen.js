@@ -1,16 +1,19 @@
 import { View, Text, SafeAreaView, FlatList, Pressable, StyleSheet } from 'react-native'
 import React, { useState, useEffect, useContext } from 'react'
+import ListComprobantes from '../components/ListComprobantes';
 import { useNavigation } from "@react-navigation/native";
-import ListPagosCasaAdmin from '../components/ListPagosCasaAdmin';
 import themeContext from '../config/themeContext'
 
-const ConsultaPagosCasaAdminScreen = (props) => {
+const Separator = () => (
+  <View style={styles.separator} />
+);
 
-  const nocasa = props.route.params.P1;
-  const text = props.route.params.P2;
-  const textff = props.route.params.P3;
+const ConsultaPagosCompAdminScreen = (props) => {
 
-  const [casauser, setCasaUser] = useState("");
+  const nocomp = props.route.params.P1;
+  
+  const [datouser, setDatoUser] = useState("");
+  //const [casauser, setCasaUser] = useState("");
 
   const navigation = useNavigation();
   const theme = useContext(themeContext);
@@ -30,54 +33,48 @@ const ConsultaPagosCasaAdminScreen = (props) => {
   }, [navigation]);
 
   useEffect(() => {
-    fetch("https://nobasys.com/api/getDatosCasaAdmin.php", {
-      //fetch("http://10.0.2.2:80/api/getDatosCasaAdmin.php", {
-        method: "POST",
-        header: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          casa: nocasa,
-          fechaini: text,
-          fechafin: textff,
-        }),
+    fetch("https://nobasys.com/api/buscaComp.php", {
+      //fetch("http://10.0.2.2:80/api/buscaComp.php", {
+      method: "POST",
+      header: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        comp: nocomp,
+      }),
+    })
+      .then((respuesta) => respuesta.json())
+      .then((responseJson) => {
+        if(responseJson=="No existen datos"){
+          alert("Este comprobante no existe, regrese y vuelva a intentar!");
+        }else{
+          setDatoUser(responseJson);
+        }       
+        //console.log(responseJson);                
       })
-        .then((respuesta) => respuesta.json())
-        .then((responseJson) => {
-          if(responseJson=="El casa no existe"){
-            alert("No existen datos para mostrar, regrese y vuelva a intentar!");
-          }else{
-            setCasaUser(responseJson);
-          }
-          //console.log(responseJson);
-        })
-        .catch((error) => {
-        console.log(error);
+      .catch((error) => {
+      console.log(error);
     });
-
   },[]);
 
   return (
     <SafeAreaView style={[styles.container, {backgroundColor:theme.background}]}>      
       <View style={styles.flat}>
         <FlatList
-          data={casauser}
+          data={datouser}
           KeyExtractor={(item) => item.casa}        
-          renderItem={({ item, index }) => <ListPagosCasaAdmin item={item}/>}
+          renderItem={({ item, index }) => <ListComprobantes item={item}/>}
           ListHeaderComponent = {() => 
             <>
               <Text style = {{fontWeight:'bold', fontSize: 18, marginBottom:5, textAlign:'center', color: 'grey'}}>                
-                Casa {nocasa}
-              </Text>
-              <Text style = {{fontWeight:'bold', fontSize: 12, marginBottom:10, textAlign:'center', color: 'grey'}}>
-                Desde:{' ' + text + '   '}
-                Hasta:{' ' + textff + ' '}
+                Comprobante {nocomp}
               </Text>
             </>            
           }          
         />
-      </View>           
+      </View>
+      <Separator />           
     </SafeAreaView>
   )
 }
@@ -101,6 +98,12 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     textDecorationLine: 'underline',
   },
-});
-
-export default ConsultaPagosCasaAdminScreen
+  separator: {
+    marginVertical: 5,
+    marginLeft: 20,
+    marginRight: 20,
+    borderBottomColor: 'gray',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+})
+export default ConsultaPagosCompAdminScreen

@@ -1,19 +1,16 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/mobilephonex32.png';
 
 const BotonPhone = (props) => {
-
     const {onPress, text}= props
-
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}
             onPress = {onPress}
         >           
             <Image
-                source={icon}
-                
+                source={icon}               
             />
             <Text
                 style={styles.buttonText}
@@ -26,9 +23,7 @@ const BotonPhone = (props) => {
 export default BotonPhone
 
 const styles = StyleSheet.create({
-
     buttonContainer:{
-        //backgroundColor: '#4b0082',
         backgroundColor: '#483d8b',
         marginBottom:10,
         paddingHorizontal:8,
@@ -44,6 +39,5 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         textAlign: 'center',
         fontSize: 14,
-    },
-    
+    },   
 })

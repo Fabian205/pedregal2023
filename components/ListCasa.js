@@ -2,9 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React, {useContext} from "react";
 import themeContext from '../config/themeContext'
 
-
 const ListCasa = ({ item }) => {
-
   const theme = useContext(themeContext);
   const { CASA, EMAIL } = item;
 

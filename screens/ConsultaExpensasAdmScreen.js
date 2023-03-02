@@ -115,7 +115,12 @@ const ConsultaExpensasAdmScreen = () => {
     })
   }, [navigation]);
 
-  const buscaComprobante=()=>{
+  const buscaComp=()=>{
+    navigation.navigate('ConsultaPagosCompAdmin', { P1: nocomp, P2: text, P3: textff})
+    setNocomp("");
+  };
+
+  /* const buscaComprobante=()=>{
     fetch("https://nobasys.com/api/buscaComp.php", {
       //fetch("http://10.0.2.2:80/api/buscaComp.php", {
       method: "POST",
@@ -129,13 +134,12 @@ const ConsultaExpensasAdmScreen = () => {
     })
       .then((respuesta) => respuesta.json())
       .then((responseJson) => {
-        setDatoUser(responseJson);
-        //console.log(responseJson); 
+        setDatoUser(responseJson);                
       })
       .catch((error) => {
       console.log(error);
   });
-  };
+  }; */
 
   const limpiarCampos=()=>{
     setNocasa("");
@@ -143,11 +147,12 @@ const ConsultaExpensasAdmScreen = () => {
     setText("");
     setTextff("");
   }
+
   const buscar = () => {
     if(nocasa === "" && text === "" && textff === "" && nocomp === ""){
       alert('Ingrese los datos que correspondan antes de buscar');
     }else if( nocomp != ""){
-      buscaComprobante();
+      buscaComp();
       limpiarCampos();
     }else if( nocasa != "" && text === "" && textff === "" ){
       alert('Ingrese un período para buscar');
@@ -169,6 +174,11 @@ const ConsultaExpensasAdmScreen = () => {
     }
   };
 
+  const limpiayasigna = () => {
+    limpiarCampos();        
+    setCasa(!casa);
+  }
+
   return (
     <SafeAreaView style={[styles.container, {backgroundColor:theme.background}]}>
       <View >
@@ -179,8 +189,9 @@ const ConsultaExpensasAdmScreen = () => {
         <Text style={{marginLeft:10, marginRight:20, color: 'indigo', paddingTop:5, color: theme.color}}>Consulte por:</Text>
         <Button         
           title={!casa ? 'comprobante' : '          casa          '}
-          onPress={() => setCasa(!casa)}
-          color= {!casa ? '#483d8b' : '#483d8b'}
+          //onPress={() => setCasa(!casa)}
+          onPress={limpiayasigna}
+          color= {!casa ? '#483d8b' : '#342a75'}
         />                                     
       </View>                       
       
@@ -287,7 +298,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,   
   },
   title:{
-    //marginTop:Platform.OS === 'ios' ? 100 : 15,
     marginTop: 10,
     fontWeight:'bold', 
     fontSize: 20, 

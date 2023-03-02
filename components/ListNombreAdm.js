@@ -22,7 +22,6 @@ const ListNombreAdm = ({ item }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: "white",
     borderRadius: 10,
     padding: 10,
   },

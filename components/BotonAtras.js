@@ -2,12 +2,8 @@ import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/chevron_back.png';
 
-
 const BotonAtras = (props) => {
-
-  
   const {onPress, text}= props
-
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}
@@ -33,8 +29,7 @@ const styles = StyleSheet.create({
       paddingHorizontal:8,
       paddingVertical:8,
       borderRadius:6,
-      alignItems:'center',
-      //textAlign: 'center',       
+      alignItems:'center',      
       width:'48%',
       flexDirection: "column",          
   },
