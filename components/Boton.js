@@ -1,11 +1,8 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-
+import {StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const Boton = (props) => {
-
     const {onPress, text}= props
-
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}
@@ -23,7 +20,6 @@ const Boton = (props) => {
 export default Boton
 
 const styles = StyleSheet.create({
-
     buttonContainer:{
         backgroundColor: '#4b0082',
         marginBottom:10,

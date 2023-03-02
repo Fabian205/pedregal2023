@@ -29,23 +29,16 @@ const BuscaComprobantesAdmScreen = () => {
     let tempDate = new Date(currentDate);
     if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-' + '0' + (tempDate.getMonth() + 1) + '-' +  '0' + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/'+ "1")
-    
+      setText(fDate)  
     }else if((tempDate.getMonth()+1) >= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-'  + (tempDate.getMonth() + 1) + '-' + '0' + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "2")
-     
+      setText(fDate)     
     }else if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() >= 9){  
       let fDate = tempDate.getFullYear() +  '-' + '0' + (tempDate.getMonth() + 1) + '-'  + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "3")
-     
+      setText(fDate)    
     }else {
       let fDate = tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' +  tempDate.getDate() ;
-      setText(fDate) 
-      //console.log((tempDate.getMonth()+1) +'/' + "4")     
+      setText(fDate)    
     }
   }
 
@@ -63,23 +56,16 @@ const BuscaComprobantesAdmScreen = () => {
 
     if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-' + '0' + (tempDateff.getMonth() + 1) + '-' +  '0' + tempDateff.getDate() ;
-      setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/'+ "1")
-   
+      setTextff(fDateff)   
     }else if((tempDateff.getMonth()+1) >= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-'  + (tempDateff.getMonth() + 1) + '-' + '0' + tempDateff.getDate() ;
-      setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "2")
-     
+      setTextff(fDateff)   
     }else if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() >= 9){  
       let fDateff = tempDateff.getFullYear() +  '-' + '0' + (tempDateff.getMonth() + 1) + '-'  + tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "3")
-
     }else {
       let fDateff = tempDateff.getFullYear() + '-' + (tempDateff.getMonth() + 1) + '-' +  tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "4")
     }      
   }
 

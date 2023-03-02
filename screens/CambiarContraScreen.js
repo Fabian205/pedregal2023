@@ -72,7 +72,6 @@ const CambiarContraScreen = (props) => {
           .then((respuesta) => respuesta.json())
           .then((responseJson) => {
             setDatoUser(responseJson);
-            //console.log('datouser: ' + ' ' + datouser);
             alert('Your password has been update')
             navigation.navigate("Login");
           })

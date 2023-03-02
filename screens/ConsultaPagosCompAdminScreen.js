@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList, Pressable, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, FlatList, StyleSheet } from 'react-native'
 import React, { useState, useEffect, useContext } from 'react'
 import ListComprobantes from '../components/ListComprobantes';
 import { useNavigation } from "@react-navigation/native";
@@ -13,7 +13,6 @@ const ConsultaPagosCompAdminScreen = (props) => {
   const nocomp = props.route.params.P1;
   
   const [datouser, setDatoUser] = useState("");
-  //const [casauser, setCasaUser] = useState("");
 
   const navigation = useNavigation();
   const theme = useContext(themeContext);
@@ -50,8 +49,7 @@ const ConsultaPagosCompAdminScreen = (props) => {
           alert("Este comprobante no existe, regrese y vuelva a intentar!");
         }else{
           setDatoUser(responseJson);
-        }       
-        //console.log(responseJson);                
+        }                      
       })
       .catch((error) => {
       console.log(error);

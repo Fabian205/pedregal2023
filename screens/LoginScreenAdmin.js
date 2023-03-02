@@ -19,9 +19,6 @@ let STORAGE_KEY3 = "@usuario_input";
 let STORAGE_KEY4 = "@pasword_input";
 
 const LoginScreenAdmin = (props) => {
-//const mail = props.route.params.P1;
-//const pass = props.route.params.P2;
-
   const [isSelected, setSelection] = useState(false);
   const [isChecked, setChecked] = useState(false);
   const [email, setEmail] = useState("");

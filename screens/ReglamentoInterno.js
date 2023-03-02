@@ -3,8 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { useNavigation } from "@react-navigation/native";
 
-const Separator = () => <View style={styles.separator} />;
-
 const ReglamentoInterno = () => {
 
   const navigation = useNavigation();
@@ -44,9 +42,6 @@ const ReglamentoInterno = () => {
       marginBottom:10, 
       textAlign:'center', 
       color: 'grey' 
-    },
-    separator: {
-      marginVertical: 10,
     },
   });
 export default ReglamentoInterno

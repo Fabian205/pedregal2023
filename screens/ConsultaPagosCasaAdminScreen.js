@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList, Pressable, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, FlatList, StyleSheet } from 'react-native'
 import React, { useState, useEffect, useContext } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import ListPagosCasaAdmin from '../components/ListPagosCasaAdmin';
@@ -50,7 +50,6 @@ const ConsultaPagosCasaAdminScreen = (props) => {
           }else{
             setCasaUser(responseJson);
           }
-          //console.log(responseJson);
         })
         .catch((error) => {
         console.log(error);

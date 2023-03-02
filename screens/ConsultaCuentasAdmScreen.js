@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, StyleSheet, Platform, Linking } from 'react-native'
 import React,{useState, useEffect, useContext} from 'react'
 import { useNavigation } from "@react-navigation/native";
-import { Icon, Input } from "@rneui/themed";
+import { Input } from "@rneui/themed";
 import BotonImg from '../components/BotonImg';
 import Boton from '../components/Boton';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -12,7 +12,6 @@ const Separator = () => <View style={styles.separator} />;
 const ConsultaCuentasAdmScreen = () => {
 
   const [casa, setCasa] = useState("");
-  const [datouser, setDatoUser] = useState("");
   const[ date, setDate] = useState(new Date());
   const[ dateff, setDateff] = useState(new Date());
   const[ mode, setMode] = useState('date');
@@ -30,23 +29,16 @@ const ConsultaCuentasAdmScreen = () => {
     let tempDate = new Date(currentDate);
     if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-' + '0' + (tempDate.getMonth() + 1) + '-' +  '0' + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/'+ "1")
-    
+      setText(fDate)   
     }else if((tempDate.getMonth()+1) >= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-'  + (tempDate.getMonth() + 1) + '-' + '0' + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "2")
-     
+      setText(fDate)    
     }else if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() >= 9){  
       let fDate = tempDate.getFullYear() +  '-' + '0' + (tempDate.getMonth() + 1) + '-'  + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "3")
-     
+      setText(fDate)    
     }else {
       let fDate = tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' +  tempDate.getDate() ;
-      setText(fDate) 
-      //console.log((tempDate.getMonth()+1) +'/' + "4")     
+      setText(fDate)    
     }
   }
 
@@ -64,23 +56,16 @@ const ConsultaCuentasAdmScreen = () => {
 
     if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-' + '0' + (tempDateff.getMonth() + 1) + '-' +  '0' + tempDateff.getDate() ;
-      setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/'+ "1")
-   
+      setTextff(fDateff)   
     }else if((tempDateff.getMonth()+1) >= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-'  + (tempDateff.getMonth() + 1) + '-' + '0' + tempDateff.getDate() ;
-      setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "2")
-     
+      setTextff(fDateff)   
     }else if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() >= 9){  
       let fDateff = tempDateff.getFullYear() +  '-' + '0' + (tempDateff.getMonth() + 1) + '-'  + tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "3")
-
     }else {
       let fDateff = tempDateff.getFullYear() + '-' + (tempDateff.getMonth() + 1) + '-' +  tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "4")
     }      
   }
 
@@ -109,14 +94,12 @@ const ConsultaCuentasAdmScreen = () => {
   }, [navigation]);
 
   const generaInforme = () => {  
-    //alert("casa:"+ casa + "text:"+ text + "textff:"+ textff);
     if(textff === ""){
       alert('Ingrese una fecha final para obtener su reporte');
     }else{
     let url = "https://nobasys.com/api/ReportePHPPedregal.php?CASA=";
     //let url = "http://10.0.2.2:80/api/ReportePHPPedregal.php?CASA=";
     Linking.openURL(url + casa + '&FECHA_INI=' + text + '&FECHA_FIN=' + textff);
-    //output="";
     setCasa("");
     setTextff("");
     }  
@@ -216,7 +199,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   title:{
-    //marginTop:Platform.OS === 'ios' ? 10 : 15,
     marginTop:15,
     fontWeight:'bold', 
     fontSize: 20, 

@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import {StyleSheet, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/calendar.png';
 
 const BotonImg = (props) => {
-    const {onPress, text}= props
+    const {onPress}= props
     return(
         <TouchableOpacity 
             style={styles.buttonContainer}

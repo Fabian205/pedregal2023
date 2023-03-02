@@ -12,7 +12,6 @@ const Separator = () => <View style={styles.separator} />;
 const EstadoCuentaGralAdmScreen = () => {
 
   const [casa, setCasa] = useState("");
-  const [datouser, setDatoUser] = useState("");
   const[ date, setDate] = useState(new Date());
   const[ dateff, setDateff] = useState(new Date());
   const[ mode, setMode] = useState('date');
@@ -31,22 +30,15 @@ const EstadoCuentaGralAdmScreen = () => {
     if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-' + '0' + (tempDate.getMonth() + 1) + '-' +  '0' + tempDate.getDate() ;
       setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/'+ "1")
-    
     }else if((tempDate.getMonth()+1) >= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-'  + (tempDate.getMonth() + 1) + '-' + '0' + tempDate.getDate() ;
       setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "2")
-     
     }else if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() >= 9){  
       let fDate = tempDate.getFullYear() +  '-' + '0' + (tempDate.getMonth() + 1) + '-'  + tempDate.getDate() ;
       setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "3")
-     
     }else {
       let fDate = tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' +  tempDate.getDate() ;
-      setText(fDate) 
-      //console.log((tempDate.getMonth()+1) +'/' + "4")     
+      setText(fDate)      
     }
   }
 
@@ -65,22 +57,15 @@ const EstadoCuentaGralAdmScreen = () => {
     if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-' + '0' + (tempDateff.getMonth() + 1) + '-' +  '0' + tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/'+ "1")
-   
     }else if((tempDateff.getMonth()+1) >= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-'  + (tempDateff.getMonth() + 1) + '-' + '0' + tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "2")
-     
     }else if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() >= 9){  
       let fDateff = tempDateff.getFullYear() +  '-' + '0' + (tempDateff.getMonth() + 1) + '-'  + tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "3")
-
     }else {
       let fDateff = tempDateff.getFullYear() + '-' + (tempDateff.getMonth() + 1) + '-' +  tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "4")
     }      
   }
 
@@ -210,7 +195,6 @@ const styles = StyleSheet.create({
   },
 
   title:{
-    //marginTop:Platform.OS === 'ios' ? 100 : 15,
     marginTop:15,
     fontWeight:'bold', 
     fontSize: 20, 

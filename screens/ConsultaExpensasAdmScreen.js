@@ -18,7 +18,6 @@ const ConsultaExpensasAdmScreen = () => {
   const[nocomp, setNocomp] = useState("");
 
   const [datouser, setDatoUser] = useState("");
-  const [casauser, setCasaUser] = useState("");
   const[ date, setDate] = useState(new Date());
   const[ dateff, setDateff] = useState(new Date());
   const[ mode, setMode] = useState('date');
@@ -36,23 +35,16 @@ const ConsultaExpensasAdmScreen = () => {
     let tempDate = new Date(currentDate);
     if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-' + '0' + (tempDate.getMonth() + 1) + '-' +  '0' + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/'+ "1")
-    
+      setText(fDate)  
     }else if((tempDate.getMonth()+1) >= 9 && tempDate.getDate() <= 9){
       let fDate = tempDate.getFullYear() + '-'  + (tempDate.getMonth() + 1) + '-' + '0' + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "2")
-     
+      setText(fDate)    
     }else if((tempDate.getMonth()+1) <= 9 && tempDate.getDate() >= 9){  
       let fDate = tempDate.getFullYear() +  '-' + '0' + (tempDate.getMonth() + 1) + '-'  + tempDate.getDate() ;
-      setText(fDate)
-      //console.log((tempDate.getMonth()+1) +'/' + "3")
-     
+      setText(fDate)     
     }else {
       let fDate = tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' +  tempDate.getDate() ;
-      setText(fDate) 
-      //console.log((tempDate.getMonth()+1) +'/' + "4")     
+      setText(fDate)      
     }
   }
 
@@ -70,23 +62,16 @@ const ConsultaExpensasAdmScreen = () => {
 
     if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-' + '0' + (tempDateff.getMonth() + 1) + '-' +  '0' + tempDateff.getDate() ;
-      setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/'+ "1")
-   
+      setTextff(fDateff)   
     }else if((tempDateff.getMonth()+1) >= 9 && tempDateff.getDate() <= 9){
       let fDateff = tempDateff.getFullYear() + '-'  + (tempDateff.getMonth() + 1) + '-' + '0' + tempDateff.getDate() ;
-      setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "2")
-     
+      setTextff(fDateff)   
     }else if((tempDateff.getMonth()+1) <= 9 && tempDateff.getDate() >= 9){  
       let fDateff = tempDateff.getFullYear() +  '-' + '0' + (tempDateff.getMonth() + 1) + '-'  + tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "3")
-
     }else {
       let fDateff = tempDateff.getFullYear() + '-' + (tempDateff.getMonth() + 1) + '-' +  tempDateff.getDate() ;
       setTextff(fDateff)
-      //console.log((tempDateff.getMonth()+1) +'/' + "4")
     }      
   }
 
@@ -119,27 +104,6 @@ const ConsultaExpensasAdmScreen = () => {
     navigation.navigate('ConsultaPagosCompAdmin', { P1: nocomp, P2: text, P3: textff})
     setNocomp("");
   };
-
-  /* const buscaComprobante=()=>{
-    fetch("https://nobasys.com/api/buscaComp.php", {
-      //fetch("http://10.0.2.2:80/api/buscaComp.php", {
-      method: "POST",
-      header: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        comp: nocomp,
-      }),
-    })
-      .then((respuesta) => respuesta.json())
-      .then((responseJson) => {
-        setDatoUser(responseJson);                
-      })
-      .catch((error) => {
-      console.log(error);
-  });
-  }; */
 
   const limpiarCampos=()=>{
     setNocasa("");
@@ -189,7 +153,6 @@ const ConsultaExpensasAdmScreen = () => {
         <Text style={{marginLeft:10, marginRight:20, color: 'indigo', paddingTop:5, color: theme.color}}>Consulte por:</Text>
         <Button         
           title={!casa ? 'comprobante' : '          casa          '}
-          //onPress={() => setCasa(!casa)}
           onPress={limpiayasigna}
           color= {!casa ? '#483d8b' : '#342a75'}
         />                                     

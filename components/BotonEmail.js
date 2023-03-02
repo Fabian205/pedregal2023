@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import icon from '../assets/emailx32.png';
 
 const BotonEmail = (props) => {

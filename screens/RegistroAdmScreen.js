@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet, Alert, Pressable } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Pressable } from 'react-native'
 import React, {useState, useEffect, useContext} from 'react'
 import { Input } from "@rneui/themed";
 import Boton from "../components/Boton";
@@ -122,16 +122,16 @@ const RegistroAdmScreen = () => {
     var month = new Date().getMonth() + 1;
     var date = new Date().getDate();
     if(month <= 9 && date <= 9){
-      var fechaActual = year + '-' + '0' + month + '-' + '0' + date;//format: y-m-d;
+      var fechaActual = year + '-' + '0' + month + '-' + '0' + date;
       setFech(fechaActual);
     }else if(month >= 9 && date <= 9){
-      var fechaActual = year + '-' + month + '-' + '0' + date;//format: y-m-d;
+      var fechaActual = year + '-' + month + '-' + '0' + date;
       setFech(fechaActual);
     }else if(month <= 9 && date >= 9){
-      var fechaActual = year + '-' + '0' + month + '-'  + date;//format: y-m-d;
+      var fechaActual = year + '-' + '0' + month + '-'  + date;
       setFech(fechaActual);
     }else{
-      var fechaActual= year + '-' + month + '-' + date;//format: y-m-d;
+      var fechaActual= year + '-' + month + '-' + date;
       setFech(fechaActual);
     }    
   }
