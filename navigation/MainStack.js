@@ -44,7 +44,7 @@ const MainStack = () => {
                     name = 'Home'
                     component={HomeScreen}
                 />
-                 <Stack.Screen
+                <Stack.Screen
                     name='Login'
                     component={LoginScreen}
                 /> 
